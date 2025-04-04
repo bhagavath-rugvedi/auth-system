@@ -1,31 +1,61 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    min-height: 100vh; /* Use min-height for better responsiveness */
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    margin: 0; /* Remove default body margin */
+    color: #333; /* Default text color */
 }
 
 .container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow */
     text-align: center;
+    width: 350px; /* Slightly wider */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 input {
     display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    width: calc(100% - 22px); /* Adjust width for padding */
+    padding: 12px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    outline: none; /* Remove default focus outline */
+}
+
+input:focus {
+    border-color: #2575fc; /* Highlight on focus */
+    box-shadow: 0 0 5px rgba(37, 117, 252, 0.5); /* Add focus shadow */
 }
 
 button {
-    background: blue;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient button */
     color: white;
-    padding: 10px;
+    padding: 14px 25px;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600; /* Semi-bold font */
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Button shadow */
+}
+
+button:hover {
+    background: linear-gradient(to right, #5a0eb9, #1e63e0); /* Slightly darker gradient */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+button:active {
+    transform: translateY(1px); /* Slight press effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Reduced shadow on press */
 }
