@@ -9,8 +9,8 @@ COPY server/ ./
 FROM node:18-alpine
 WORKDIR /app
 COPY --from=builder /app/node_modules ./node_modules
-COPY server/ ./
-COPY client/ ./public/
+COPY server/ ./server/
+COPY client/ ./client/
 
 # Environment variables
 ENV MONGODB_URI=mongodb://mongo:27017/authentication-system
@@ -19,4 +19,5 @@ ENV NODE_ENV=production
 ENV PORT=3000
 
 EXPOSE 3000
-CMD ["npm", "start"]
+# Point to the server's index.js
+CMD ["node", "server/index.js"]
